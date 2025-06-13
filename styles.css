@@ -1,0 +1,65 @@
+/* Couleurs personnalisées */
+:root {
+    --primary-blue: #001f3f;
+    --secondary-blue: #00bfff;
+}
+
+.bg-primary-blue {
+    background-color: var(--primary-blue) !important;
+}
+
+.text-primary-blue {
+    color: var(--primary-blue) !important;
+}
+
+/* Hero section */
+.hero-section {
+    height: 60vh;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+    padding: 60px 20px;
+}
+
+/* Titres */
+h1, h2, h5 {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Service box */
+.service-box {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: scale(1.03);
+}
+
+form input, form textarea {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+form button.btn-primary {
+    background-color: var(--secondary-blue);
+    border: none;
+}
+
+form button.btn-primary:hover {
+    background-color: #009acd;
+}
+
+.hero-section .btn {
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-style: italic;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: white;
+    color: var(--primary-blue);
+}
