@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conseil & Audit IT - Salva Tech | Expertise et Consulting Informatique</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Services de conseil et audit informatique au Sénégal. Optimisation SI, cybersécurité, migration cloud et stratégie digitale pour entreprises." />
+    <meta name="keywords" content="conseil informatique Sénégal, audit IT Dakar, cybersécurité, migration cloud, consulting digital, optimisation SI" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary-blue">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fst-italic" href="index.html">
+                <img src="images/logo.png" alt="Logo Salva Tech" height="50" class="me-2" />
+                Salva Tech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Tous les services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="devis.html">Devis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light">
+        <div class="container">
+            <ol class="breadcrumb py-3 mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Conseil & Audit IT</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="service-header text-white text-center d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto">
+                    <i class="fas fa-search-dollar service-icon mb-3"></i>
+                    <h1 class="display-5 fw-bold">Conseil & Audit IT</h1>
+                    <p class="lead">Expertise technique et stratégique pour optimiser votre système d'information et sécuriser votre transformation digitale.</p>
+                    <a href="#services-conseil" class="btn btn-outline-light btn-lg">Nos expertises</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services de conseil -->
+    <section id="services-conseil" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary-blue">Nos Services de Conseil</h2>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-category-card">
+                        <div class="service-category-header">
+                            <i class="fas fa-shield-alt fa-2x text-white mb-2"></i>
+                            <h4>Audit de Sécurité</h4>
+                        </div>
+                        <div class="service-category-content">
+                            <ul class="service-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Évaluation des vulnérabilités</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tests de pénétration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Analyse des politiques de sécurité</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Recommandations de mise en conformité</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Plan de remédiation</li>
+                            </ul>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" onclick="requestConsulting('Audit Sécurité')">
+                                    Demander un audit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-category-card">
+                        <div class="service-category-header">
+                            <i class="fas fa-cloud fa-2x text-white mb-2"></i>
+                            <h4>Migration Cloud</h4>
+                        </div>
+                        <div class="service-category-content">
+                            <ul class="service-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Évaluation de l'existant</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Stratégie de migration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Sélection des solutions cloud</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Plan de migration détaillé</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Accompagnement du changement</li>
+                            </ul>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" onclick="requestConsulting('Migration Cloud')">
+                                    Consulter un expert
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-category-card">
+                        <div class="service-category-header">
+                            <i class="fas fa-chart-line fa-2x text-white mb-2"></i>
+                            <h4>Optimisation SI</h4>
+                        </div>
+                        <div class="service-category-content">
+                            <ul class="service-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Audit d'infrastructure</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Analyse des performances</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Optimisation des coûts</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Modernisation technologique</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tableaux de bord de pilotage</li>
+                            </ul>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" onclick="requestConsulting('Optimisation SI')">
+                                    Optimiser mon SI
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus d'audit -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary-blue">Notre Méthodologie d'Audit</h2>
+            <div class="row g-4">
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h6>Pré-audit</h6>
+                        <p>Entretiens et collecte d'informations</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h6>Analyse</h6>
+                        <p>Évaluation technique approfondie</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h6>Tests</h6>
+                        <p>Vérifications et simulations</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h6>Diagnostic</h6>
+                        <p>Identification des points d'amélioration</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h6>Rapport</h6>
+                        <p>Recommandations détaillées</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h6>Suivi</h6>
+                        <p>Accompagnement de la mise en œuvre</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary-blue text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Besoin d'une Expertise IT ?</h2>
+            <p class="lead mb-4">Nos consultants experts vous accompagnent dans l'optimisation et la sécurisation de votre SI.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="devis.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-calculator me-2"></i>Demander un devis
+                        </a>
+                        <a href="tel:+221772404848" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Consultation gratuite
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-white text-center bg-primary-blue">
+        <p class="mb-0">&copy; 2025 Salva Tech. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function requestConsulting(serviceName) {
+            window.location.href = `devis.html?consulting=${encodeURIComponent(serviceName)}`;
+        }
+    </script>
+</body>
+</html>

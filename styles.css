@@ -859,6 +859,440 @@ html {
 
 .send-btn:hover {
     background: var(--primary-blue);
+}
+
+/* ========================================
+   PAGES DE SERVICES DÉTAILLÉES
+   ======================================== */
+
+/* Header de service */
+.service-header {
+    min-height: 50vh;
+    background: var(--gradient-primary);
+    padding: 4rem 0;
+}
+
+.service-icon {
+    font-size: 4rem;
+    opacity: 0.9;
+}
+
+/* Breadcrumb personnalisé */
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Cartes d'avantages */
+.advantage-card {
+    padding: 2rem;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Filtres de produits */
+.filter-tabs {
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 0.75rem 1.5rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Cartes de produits */
+.product-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+}
+
+.product-info h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.product-specs {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.product-price {
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Services inclus */
+.service-included-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    height: 100%;
+    transition: var(--transition);
+}
+
+.service-included-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-included-card h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.service-included-card ul li {
+    padding: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+/* Animations de fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Processus et étapes */
+.process-step {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    height: 100%;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.process-step h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Tableaux de prix */
+.pricing-table {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: var(--transition);
+}
+
+.pricing-table:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-period {
+    opacity: 0.9;
+}
+
+.pricing-features {
+    padding: 2rem;
+}
+
+.pricing-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+/* Mode sombre pour les pages de services */
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .service-included-card,
+[data-theme="dark"] .process-step,
+[data-theme="dark"] .pricing-table {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .filter-btn {
+    background: var(--card-bg);
+    border-color: var(--secondary-blue);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+    background: var(--secondary-blue);
+    color: white;
+}
+
+[data-theme="dark"] .product-specs,
+[data-theme="dark"] .service-included-card ul li {
+    color: #bbb;
+}
+
+/* Cartes de catégories de services */
+.service-category-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.service-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.service-category-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.service-category-header h4 {
+    color: white;
+    margin: 0;
+    font-weight: 600;
+}
+
+.service-category-content {
+    padding: 2rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.service-list li {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+/* Mode sombre pour les catégories de services */
+[data-theme="dark"] .service-category-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .service-category-content {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .service-list li {
+    border-bottom-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Cartes de solutions */
+.solution-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.solution-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.solution-header h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.solution-subtitle {
+    opacity: 0.9;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.solution-content {
+    padding: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.feature-list li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #666;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.feature-list li::before {
+    content: '•';
+    color: var(--secondary-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.solution-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Cartes technologies */
+.tech-card {
+    padding: 2rem 1rem;
+    transition: var(--transition);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-card h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.tech-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Mode sombre pour solutions et technologies */
+[data-theme="dark"] .solution-card,
+[data-theme="dark"] .tech-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .solution-content {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .feature-list li,
+[data-theme="dark"] .tech-card p {
+    color: #bbb;
+}
+
+[data-theme="dark"] .tech-card h5 {
+    color: var(--secondary-blue);
 }/* Boutons améliorés */
 .btn {
     border-radius: 50px;
@@ -953,4 +1387,302 @@ html {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ========================================
+   STYLES POUR PAGES CONSEIL & FORMATIONS
+   ======================================== */
+
+/* Process steps for audit methodology */
+.process-step {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto 1rem;
+}
+
+.process-step h6 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Feature cards for training modalities */
+.feature-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--accent-color);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.testimonial-author {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 1rem;
+}
+
+.testimonial-author strong {
+    color: var(--primary-blue);
+}
+
+/* Dark mode for new components */
+[data-theme="dark"] .process-step {
+    background: var(--dark-card-bg);
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .process-step p {
+    color: #ccc;
+}
+
+[data-theme="dark"] .feature-card {
+    background: var(--dark-card-bg);
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .feature-card p {
+    color: #ccc;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background: var(--dark-card-bg);
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .testimonial-card p {
+    color: #ccc;
+}
+
+[data-theme="dark"] .testimonial-author {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   LIENS DE SERVICES SUR PAGE D'ACCUEIL
+   ======================================== */
+
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.service-link .service-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-link:hover .service-box {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2);
+}
+
+.service-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-color));
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.service-link:hover .service-action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-action i {
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover .service-action i {
+    transform: translateX(5px);
+}
+
+/* Dark mode pour les liens de services */
+[data-theme="dark"] .service-link .service-action {
+    background: linear-gradient(135deg, var(--dark-primary), var(--dark-accent));
+}
+
+/* ========================================
+   SERVICES COMPLETS - SECTION BLEUE
+   ======================================== */
+
+.service-link-white {
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.service-link-white:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.service-card-white {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-link-white:hover .service-card-white {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-link-white:hover .service-card-white::before {
+    left: 100%;
+}
+
+.service-card-white i {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.service-link-white:hover .service-card-white i {
+    transform: scale(1.1);
+    color: white;
+}
+
+.service-card-white h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.service-card-white p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.service-link-white:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: white;
 }
