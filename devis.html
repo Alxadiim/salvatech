@@ -50,73 +50,50 @@
       <div class="row justify-content-center">
         <div class="col-md-10">
           <div class="calculator-card">
-            <h3 class="text-center mb-4 text-primary-blue">
-              <i class="fas fa-brain me-2"></i>Calculateur de Devis Intelligent
-            </h3>
-            
-            <!-- Sélection pays pour tarification régionale -->
-            <div class="row mb-4">
-              <div class="col-md-6 mx-auto">
-                <label for="country-select" class="form-label"><i class="fas fa-globe-africa me-2"></i>Pays de livraison</label>
-                <select class="form-select" id="country-select" onchange="updateRegionalPricing()">
-                  <option value="SN">🇸🇳 Sénégal</option>
-                  <option value="GM">🇬🇲 Gambie (+15%)</option>
-                  <option value="ML">🇲🇱 Mali (+25%)</option>
-                  <option value="GW">🇬🇼 Guinée-Bissau (+30%)</option>
-                  <option value="MR">🇲🇷 Mauritanie (+35%)</option>
-                </select>
+            <div class="text-center mb-5">
+              <h2 class="text-primary-blue mb-2">🛒 Choisissez vos services</h2>
+              <p class="text-muted mb-2">Cliquez pour sélectionner</p>
+              <div class="alert alert-info d-inline-flex align-items-center">
+                <i class="fas fa-info-circle me-2"></i>
+                <small><strong>Prix indicatifs</strong> - Le tarif final sera ajusté selon vos besoins spécifiques</small>
               </div>
             </div>
             
-            <div id="quote-calculator">
-              <div class="row">
-                <div class="col-md-8">
-                  <!-- Produits générés dynamiquement -->
-                  <div class="services-grid" id="products-grid">
-                    <!-- Le contenu sera généré par intelligent-quote.js -->
-                  </div>
-                  
-                  <!-- Recommandations intelligentes -->
-                  <div id="recommendations-section" class="mt-4" style="display: none;">
-                    <h5 class="text-primary-blue"><i class="fas fa-lightbulb me-2"></i>Recommandations</h5>
-                    <div id="recommendations-grid" class="row">
-                      <!-- Recommandations générées dynamiquement -->
-                    </div>
-                  </div>
-                  
-                  <!-- Packages détectés -->
-                  <div id="packages-section" class="mt-4" style="display: none;">
-                    <h5 class="text-success"><i class="fas fa-gift me-2"></i>Packages Promotionnels Détectés</h5>
-                    <div id="packages-list">
-                          <h6>Formation personnalisée</h6>
-                          <small>À partir de 35 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-formation" class="quantity-container">
-                        <input type="number" id="quantity-formation" class="quantity-input" min="1" value="1">
-                      </div>
-                    </div>
+            <!-- Grille ultra-simple -->
+            <div class="services-grid mb-4" id="services-grid">
+              <!-- Services générés par JS -->
+            </div>
 
-                  </div>
-                </div>
                 
-                <div class="col-md-4">
-                  <div class="estimate-summary">
-                    <h5 class="text-primary-blue mb-3">Estimation</h5>
-                    <div class="total-section">
-                      <div class="total-label">Total estimé :</div>
-                      <div class="total-amount">
-                        <span id="estimated-total">0</span> FCFA
-                      </div>
-                    </div>
-                    <div class="estimate-note">
-                      <small>
-                        <i class="fas fa-info-circle me-1"></i>
-                        Prix indicatifs. Un devis précis sera établi après évaluation de vos besoins spécifiques.
-                      </small>
-                    </div>
-                  </div>
+            <!-- Aperçu des services sélectionnés -->
+            <div class="selection-summary">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">📋 Votre sélection</h5>
+                <small class="text-muted">
+                  <i class="fas fa-tag me-1"></i>Prix de départ
+                </small>
+              </div>
+              <div id="selected-details" class="mb-3">
+                <div class="no-selection">
+                  <i class="fas fa-shopping-cart"></i>
+                  <p>Aucun service sélectionné</p>
+                  <small class="text-muted">Les prix affichés sont des tarifs de base</small>
                 </div>
+              </div>
+            </div>
+            
+            <!-- Total -->
+            <div class="total-card text-center">
+              <div class="total-info">
+                <span id="count">0</span> article(s) au total
+              </div>
+              <div class="total-price">
+                <span id="total">0</span> FCFA
+              </div>
+              <div class="total-disclaimer">
+                <small><i class="fas fa-calculator me-1"></i>Estimation de base - Devis personnalisé gratuit</small>
+              </div>
+            </div>
               </div>
             </div>
           </div>
@@ -184,28 +161,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Scripts personnalisés -->
   <script src="script.js"></script>
-  <!-- Système de devis intelligent -->
-  <script src="intelligent-quote.js"></script>
+  <!-- Sélecteur ultra-simple -->
+  <script src="simple-selector.js"></script>
 
-  <!-- Script d'envoi avec système intelligent -->
+  <!-- Script d'envoi -->
   <script>
-    // Initialisation du système de devis intelligent
     document.addEventListener('DOMContentLoaded', function() {
-      const quoteSystem = new IntelligentQuoteSystem();
-      
-      // Gestionnaire de soumission du formulaire
       const form = document.getElementById("contact-form");
       form.addEventListener("submit", async function(event) {
         event.preventDefault();
         
-        // Calculer le devis avec les détails
-        const quoteData = quoteSystem.generateQuote();
         const formData = new FormData(form);
         
-        // Ajouter les données du devis au formulaire
-        formData.append('quote_details', JSON.stringify(quoteData));
-        formData.append('total_amount', quoteData.total);
-        formData.append('selected_country', quoteData.country);
+        // Ajouter les services sélectionnés avec quantités
+        if (selector) {
+          const services = selector.getSelectedServices();
+          const total = document.getElementById('total').textContent;
+          
+          const servicesList = services.map(s => `${s.name} (x${s.quantity})`).join(', ');
+          const detailedList = services.map(s => `${s.name}: ${s.quantity} × ${s.price.toLocaleString()} = ${(s.price * s.quantity).toLocaleString()} FCFA`).join('\n');
+          
+          formData.append('services_selected', servicesList);
+          formData.append('services_detail', detailedList);
+          formData.append('total_estimated', total + ' FCFA');
+          formData.append('total_items', document.getElementById('count').textContent);
+        }
         
         await fetch("https://formspree.io/f/meokgwon", {
           method: "POST",
