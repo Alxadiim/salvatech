@@ -27,6 +27,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white active" href="devis.html">Devis</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="rendez-vous.html">Rendez-vous</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="FAQ.html">FAQ</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -48,88 +51,43 @@
         <div class="col-md-10">
           <div class="calculator-card">
             <h3 class="text-center mb-4 text-primary-blue">
-              <i class="fas fa-calculator me-2"></i>Calculateur de Devis Rapide
+              <i class="fas fa-brain me-2"></i>Calculateur de Devis Intelligent
             </h3>
+            
+            <!-- Sélection pays pour tarification régionale -->
+            <div class="row mb-4">
+              <div class="col-md-6 mx-auto">
+                <label for="country-select" class="form-label"><i class="fas fa-globe-africa me-2"></i>Pays de livraison</label>
+                <select class="form-select" id="country-select" onchange="updateRegionalPricing()">
+                  <option value="SN">🇸🇳 Sénégal</option>
+                  <option value="GM">🇬🇲 Gambie (+15%)</option>
+                  <option value="ML">🇲🇱 Mali (+25%)</option>
+                  <option value="GW">🇬🇼 Guinée-Bissau (+30%)</option>
+                  <option value="MR">🇲🇷 Mauritanie (+35%)</option>
+                </select>
+              </div>
+            </div>
+            
             <div id="quote-calculator">
               <div class="row">
                 <div class="col-md-8">
-                  <div class="services-grid">
-                    
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="ordinateur">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
-                          <h6>Ordinateur de bureau/portable</h6>
-                          <small>À partir de 350 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-ordinateur" class="quantity-container">
-                        <input type="number" id="quantity-ordinateur" class="quantity-input" min="1" value="1">
-                      </div>
+                  <!-- Produits générés dynamiquement -->
+                  <div class="services-grid" id="products-grid">
+                    <!-- Le contenu sera généré par intelligent-quote.js -->
+                  </div>
+                  
+                  <!-- Recommandations intelligentes -->
+                  <div id="recommendations-section" class="mt-4" style="display: none;">
+                    <h5 class="text-primary-blue"><i class="fas fa-lightbulb me-2"></i>Recommandations</h5>
+                    <div id="recommendations-grid" class="row">
+                      <!-- Recommandations générées dynamiquement -->
                     </div>
-
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="imprimante">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
-                          <h6>Imprimante multifonction</h6>
-                          <small>À partir de 85 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-imprimante" class="quantity-container">
-                        <input type="number" id="quantity-imprimante" class="quantity-input" min="1" value="1">
-                      </div>
-                    </div>
-
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="onduleur">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
-                          <h6>Onduleur</h6>
-                          <small>À partir de 45 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-onduleur" class="quantity-container">
-                        <input type="number" id="quantity-onduleur" class="quantity-input" min="1" value="1">
-                      </div>
-                    </div>
-
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="installation">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
-                          <h6>Installation réseau</h6>
-                          <small>À partir de 25 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-installation" class="quantity-container">
-                        <input type="number" id="quantity-installation" class="quantity-input" min="1" value="1">
-                      </div>
-                    </div>
-
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="systeme-gestion">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
-                          <h6>Système de gestion</h6>
-                          <small>À partir de 150 000 FCFA</small>
-                        </div>
-                      </label>
-                      <div id="quantity-container-systeme-gestion" class="quantity-container">
-                        <input type="number" id="quantity-systeme-gestion" class="quantity-input" min="1" value="1">
-                      </div>
-                    </div>
-
-                    <div class="service-item">
-                      <label class="service-checkbox">
-                        <input type="checkbox" name="services" value="formation">
-                        <span class="checkmark"></span>
-                        <div class="service-info">
+                  </div>
+                  
+                  <!-- Packages détectés -->
+                  <div id="packages-section" class="mt-4" style="display: none;">
+                    <h5 class="text-success"><i class="fas fa-gift me-2"></i>Packages Promotionnels Détectés</h5>
+                    <div id="packages-list">
                           <h6>Formation personnalisée</h6>
                           <small>À partir de 35 000 FCFA</small>
                         </div>
@@ -226,23 +184,45 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Scripts personnalisés -->
   <script src="script.js"></script>
+  <!-- Système de devis intelligent -->
+  <script src="intelligent-quote.js"></script>
 
-  <!-- Script d'envoi -->
+  <!-- Script d'envoi avec système intelligent -->
   <script>
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
+    // Initialisation du système de devis intelligent
+    document.addEventListener('DOMContentLoaded', function() {
+      const quoteSystem = new IntelligentQuoteSystem();
+      
+      // Gestionnaire de soumission du formulaire
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+        
+        // Calculer le devis avec les détails
+        const quoteData = quoteSystem.generateQuote();
+        const formData = new FormData(form);
+        
+        // Ajouter les données du devis au formulaire
+        formData.append('quote_details', JSON.stringify(quoteData));
+        formData.append('total_amount', quoteData.total);
+        formData.append('selected_country', quoteData.country);
+        
+        await fetch("https://formspree.io/f/meokgwon", {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      await fetch("https://formspree.io/f/meokgwon", {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+        window.location.href = "merci.html";
       });
-
-      window.location.href = "merci.html";
     });
   </script>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/221772404848?text=Bonjour%20Salva%20Tech%2C%20j%27aimerais%20obtenir%20un%20devis%20personnalis%C3%A9." class="whatsapp-float" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+    <div class="whatsapp-tooltip">Devis rapide sur WhatsApp</div>
+  </a>
 
 </body>
 </html>

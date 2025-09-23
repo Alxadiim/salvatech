@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Prendre Rendez-vous - Salva Tech | Réservation Intervention IT</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prenez rendez-vous avec Salva Tech pour vos besoins informatiques. Intervention rapide, support technique et conseil IT au Sénégal." />
+    <meta name="keywords" content="rendez-vous informatique Dakar, intervention IT Sénégal, support technique, réparation ordinateur, conseil IT" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary-blue">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fst-italic" href="index.html">
+                <img src="images/logo.png" alt="Logo Salva Tech" height="45" class="me-2 d-none d-sm-inline" />
+                <img src="images/logo.png" alt="Logo Salva Tech" height="35" class="me-2 d-sm-none" />
+                <span class="d-none d-sm-inline">Salva Tech</span>
+                <span class="d-sm-none">Salva</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="devis.html">Devis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="rendez-vous.html">Rendez-vous</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="service-header text-white text-center d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto">
+                    <i class="fas fa-calendar-check service-icon mb-3"></i>
+                    <h1 class="display-5 fw-bold">Prendre Rendez-vous</h1>
+                    <p class="lead">Demandez un rendez-vous pour votre intervention informatique. Nous vous contacterons pour confirmer la disponibilité.</p>
+                    <div class="alert alert-info mt-3 d-inline-block">
+                        <i class="fas fa-globe-africa me-2"></i>
+                        <strong>Zone d'intervention :</strong> Sénégal (couverture complète) + Afrique de l'Ouest (Gambie, Mali, Guinée-Bissau, Mauritanie)
+                    </div>
+                    <div class="alert alert-warning mt-2 d-inline-block">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Note :</strong> Ce formulaire envoie une demande de rendez-vous. Notre équipe vous contactera sous 24h pour confirmer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Types de rendez-vous -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary-blue">Choisissez votre Type d'Intervention</h2>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="appointment-type-card" data-service="diagnostic" data-duration="60" data-price="gratuit">
+                        <div class="appointment-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h5>Diagnostic Gratuit</h5>
+                        <p>Évaluation de vos besoins informatiques et conseil personnalisé.</p>
+                        <div class="appointment-details">
+                            <span class="duration"><i class="fas fa-clock me-1"></i>60 min</span>
+                            <span class="price">Gratuit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="appointment-type-card" data-service="support" data-duration="120" data-price="25000">
+                        <div class="appointment-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h5>Support Technique</h5>
+                        <p>Dépannage, réparation et maintenance de vos équipements informatiques.</p>
+                        <div class="appointment-details">
+                            <span class="duration"><i class="fas fa-clock me-1"></i>2h</span>
+                            <span class="price">25 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="appointment-type-card" data-service="installation" data-duration="180" data-price="35000">
+                        <div class="appointment-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h5>Installation & Configuration</h5>
+                        <p>Installation de logiciels, configuration réseau et mise en service.</p>
+                        <div class="appointment-details">
+                            <span class="duration"><i class="fas fa-clock me-1"></i>3h</span>
+                            <span class="price">35 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="appointment-type-card" data-service="formation" data-duration="240" data-price="50000">
+                        <div class="appointment-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h5>Formation Personnalisée</h5>
+                        <p>Session de formation sur l'utilisation de vos outils informatiques.</p>
+                        <div class="appointment-details">
+                            <span class="duration"><i class="fas fa-clock me-1"></i>4h</span>
+                            <span class="price">50 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="appointment-type-card" data-service="conseil" data-duration="90" data-price="30000">
+                        <div class="appointment-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h5>Conseil & Audit</h5>
+                        <p>Analyse de votre système informatique et recommandations d'amélioration.</p>
+                        <div class="appointment-details">
+                            <span class="duration"><i class="fas fa-clock me-1"></i>1h30</span>
+                            <span class="price">30 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Système de réservation -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="booking-container">
+                        <div class="row">
+                            
+                            <!-- Calendrier -->
+                            <div class="col-lg-7 mb-4">
+                                <div class="calendar-section">
+                                    <h4 class="mb-4 text-primary-blue">
+                                        <i class="fas fa-calendar-alt me-2"></i>Choisissez une date
+                                    </h4>
+                                    <div id="appointment-calendar"></div>
+                                </div>
+
+                                <!-- Créneaux horaires -->
+                                <div class="time-slots-section mt-4" id="time-slots-container" style="display: none;">
+                                    <h5 class="mb-3 text-primary-blue">
+                                        <i class="fas fa-clock me-2"></i>Créneaux disponibles
+                                    </h5>
+                                    <div class="row g-2" id="time-slots-grid"></div>
+                                </div>
+                            </div>
+
+                            <!-- Formulaire de réservation -->
+                            <div class="col-lg-5">
+                                <div class="booking-form-section">
+                                    <h4 class="mb-4 text-primary-blue">
+                                        <i class="fas fa-user me-2"></i>Vos informations
+                                    </h4>
+                                    
+                                    <form id="appointment-form">
+                                        <div class="selected-service-info mb-4" id="selected-service-info" style="display: none;">
+                                            <div class="alert alert-info">
+                                                <h6><i class="fas fa-info-circle me-2"></i>Service sélectionné</h6>
+                                                <div id="service-details"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="appointment-summary mb-4" id="appointment-summary" style="display: none;">
+                                            <div class="summary-card">
+                                                <h6><i class="fas fa-calendar-check me-2"></i>Récapitulatif</h6>
+                                                <div id="summary-content"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="client-name" class="form-label">Nom complet *</label>
+                                            <input type="text" class="form-control" id="client-name" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="client-email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="client-email">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="client-country" class="form-label">Pays *</label>
+                                                <select class="form-select" id="client-country" required onchange="updateCities()">
+                                                    <option value="">Sélectionnez votre pays</option>
+                                                    <option value="SN">🇸🇳 Sénégal</option>
+                                                    <option value="GM">🇬🇲 Gambie</option>
+                                                    <option value="ML">🇲🇱 Mali</option>
+                                                    <option value="GW">🇬🇼 Guinée-Bissau</option>
+                                                    <option value="MR">🇲🇷 Mauritanie</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="client-city" class="form-label">Ville/Région *</label>
+                                                <select class="form-select" id="client-city" required>
+                                                    <option value="">D'abord sélectionner le pays</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="client-phone" class="form-label">Téléphone *</label>
+                                                <input type="tel" class="form-control" id="client-phone" placeholder="Numéro de téléphone" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="client-address" class="form-label">Adresse d'intervention *</label>
+                                            <textarea class="form-control" id="client-address" rows="2" placeholder="Adresse complète où aura lieu l'intervention" required></textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="client-message" class="form-label">Détails du problème</label>
+                                            <textarea class="form-control" id="client-message" rows="3" placeholder="Décrivez brièvement votre problème ou vos besoins..."></textarea>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="terms-accept" required>
+                                                <label class="form-check-label" for="terms-accept">
+                                                    J'accepte les conditions de service et confirme les informations
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-lg w-100" id="confirm-appointment" disabled>
+                                            <i class="fas fa-paper-plane me-2"></i>Envoyer la demande de rendez-vous
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informations pratiques -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-5 text-primary-blue">Informations Pratiques</h3>
+            <div class="row g-4">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card text-center">
+                        <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                        <h6>Zone d'intervention</h6>
+                        <p>Dakar, Guédiawaye, Pikine, Rufisque et environs</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card text-center">
+                        <i class="fas fa-business-time fa-2x text-primary mb-3"></i>
+                        <h6>Horaires</h6>
+                        <p>Lun-Ven: 8h-18h<br>Sam: 9h-16h<br>Dim: Urgences uniquement</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card text-center">
+                        <i class="fas fa-credit-card fa-2x text-primary mb-3"></i>
+                        <h6>Paiement</h6>
+                        <p>Espèces, Mobile Money (Orange Money, Wave)</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card text-center">
+                        <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                        <h6>Garantie</h6>
+                        <p>Intervention garantie 7 jours. Satisfaction assurée.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-white text-center bg-primary-blue">
+        <p class="mb-0">&copy; 2025 Salva Tech. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Modal de confirmation -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-paper-plane me-2"></i>Demande envoyée !
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center py-3">
+                        <i class="fas fa-clock fa-4x text-primary mb-3"></i>
+                        <h5>Votre demande de rendez-vous a été envoyée</h5>
+                        <p class="mb-3">Notre équipe vous contactera sous 24h pour confirmer le créneau.</p>
+                        <div id="confirmation-details" class="alert alert-light">
+                            <!-- Détails du rendez-vous -->
+                        </div>
+                        <p class="text-muted small">
+                            En cas d'urgence, contactez-nous au <strong>+221 77 240 48 48</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/221772404848?text=Bonjour%20Salva%20Tech%2C%20j%27aimerais%20prendre%20rendez-vous%20pour%20une%20intervention." class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Rendez-vous rapide sur WhatsApp</div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="notification-config.js"></script>
+    <script src="script.js"></script>
+    <script src="appointment.js"></script>
+</body>
+</html>
