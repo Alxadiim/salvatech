@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laisser un Témoignage | Salva Tech</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles personnalisés -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary-blue" href="index.html">
+                <img src="images/logo.png" alt="Salva Tech" height="40" class="me-2">
+                Salva Tech
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="devis.html">Devis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="temoignages.html">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rendez-vous.html">Rendez-vous</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="testimonials-header py-5 mt-5">
+        <div class="container text-center">
+            <h1 class="display-4 text-white mb-3">
+                <i class="fas fa-heart me-3"></i>
+                Partagez Votre Expérience
+            </h1>
+            <p class="lead text-white-50">Votre avis compte ! Aidez d'autres entreprises à découvrir nos services</p>
+        </div>
+    </header>
+
+    <!-- Formulaire de témoignage -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="testimonial-form-card">
+                        <div class="card-header text-center">
+                            <h3 class="text-primary-blue mb-2">
+                                <i class="fas fa-comment-dots me-2"></i>
+                                Laisser un Témoignage
+                            </h3>
+                            <p class="text-muted mb-0">Partagez votre expérience avec Salva Tech</p>
+                        </div>
+                        
+                        <div class="card-body p-4">
+                            <form id="testimonial-form">
+                                <!-- Informations client -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="client-name" class="form-label">
+                                            <i class="fas fa-user me-2"></i>Votre nom *
+                                        </label>
+                                        <input type="text" class="form-control" id="client-name" name="client_name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="company" class="form-label">
+                                            <i class="fas fa-building me-2"></i>Entreprise / Fonction
+                                        </label>
+                                        <input type="text" class="form-control" id="company" name="company" placeholder="Directeur, Commerce Plus">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="client-email" class="form-label">
+                                            <i class="fas fa-envelope me-2"></i>Email *
+                                        </label>
+                                        <input type="email" class="form-control" id="client-email" name="client_email" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="service-used" class="form-label">
+                                            <i class="fas fa-cogs me-2"></i>Service utilisé
+                                        </label>
+                                        <select class="form-select" id="service-used" name="service_used">
+                                            <option value="">Sélectionner un service</option>
+                                            <option value="vente-materiel">Vente de matériel</option>
+                                            <option value="installation">Installation réseau</option>
+                                            <option value="systeme-gestion">Système de gestion</option>
+                                            <option value="formation">Formation</option>
+                                            <option value="support">Support technique</option>
+                                            <option value="site-web">Site web</option>
+                                            <option value="autre">Autre</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Note -->
+                                <div class="mb-4">
+                                    <label class="form-label">
+                                        <i class="fas fa-star me-2"></i>Votre note *
+                                    </label>
+                                    <div class="rating-input">
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star3" name="rating" value="3">
+                                        <label for="star3"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star1" name="rating" value="1">
+                                        <label for="star1"><i class="fas fa-star"></i></label>
+                                    </div>
+                                    <small class="text-muted">Cliquez sur les étoiles pour noter</small>
+                                </div>
+
+                                <!-- Témoignage -->
+                                <div class="mb-4">
+                                    <label for="testimonial-text" class="form-label">
+                                        <i class="fas fa-quote-left me-2"></i>Votre témoignage *
+                                    </label>
+                                    <textarea class="form-control" id="testimonial-text" name="testimonial_text" rows="5" 
+                                             placeholder="Décrivez votre expérience avec Salva Tech..." required></textarea>
+                                    <div class="char-counter">
+                                        <small class="text-muted"><span id="char-count">0</span>/500 caractères</small>
+                                    </div>
+                                </div>
+
+                                <!-- Autorisation de publication -->
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="publish-consent" name="publish_consent" required>
+                                        <label class="form-check-label" for="publish-consent">
+                                            <i class="fas fa-check me-2"></i>
+                                            J'autorise Salva Tech à publier ce témoignage sur leur site web et supports de communication
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Bouton de soumission -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        Envoyer mon Témoignage
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages existants (aperçu) -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-5 text-primary-blue">
+                <i class="fas fa-comments me-2"></i>
+                Témoignages Récents
+            </h3>
+            
+            <div class="row" id="recent-testimonials">
+                <!-- Témoignages générés dynamiquement -->
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="index.html#testimonials" class="btn btn-outline-primary">
+                    <i class="fas fa-eye me-2"></i>Voir tous les témoignages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Salva Tech. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="testimonial-system.js"></script>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/221772404848?text=Bonjour%20Salva%20Tech%2C%20j%27aimerais%20partager%20mon%20exp%C3%A9rience%20avec%20vos%20services." class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Témoignage via WhatsApp</div>
+    </a>
+
+</body>
+</html>

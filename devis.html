@@ -30,6 +30,7 @@
           <li class="nav-item"><a class="nav-link text-white active" href="devis.html">Devis</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="rendez-vous.html">Rendez-vous</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="FAQ.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="temoignages.html">Témoignages</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -193,7 +194,9 @@
           headers: { 'Accept': 'application/json' }
         });
 
-        window.location.href = "merci.html";
+        // Sauvegarder le type de soumission
+        localStorage.setItem('lastSubmissionType', 'quote');
+        window.location.href = "merci.html?type=quote";
       });
     });
   </script>

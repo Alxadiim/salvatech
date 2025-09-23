@@ -1,15 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Message envoyé - Salva Tech</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci - Salva Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
-  <div class="text-center">
-    <h1 class="text-success">✅ Merci pour votre message !</h1>
-    <p>Nous vous répondrons dans les plus brefs délais.</p>
-    <a href="index.html" class="btn btn-primary mt-3">Retour à l'accueil</a>
-  </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary-blue">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fst-italic" href="index.html">
+                <i class="fas fa-shield-alt me-2"></i>Salva Tech
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <section class="py-5 bg-light min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="thank-you-card text-center">
+                        <div class="thank-you-icon mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        
+                        <div id="default-message">
+                            <h1 class="mb-4">Merci beaucoup !</h1>
+                            <p class="lead mb-4">Votre message a été envoyé avec succès. Notre équipe vous répondra dans les plus brefs délais.</p>
+                        </div>
+                        
+                        <div id="quote-message" style="display: none;">
+                            <h1 class="mb-4">Demande de devis reçue !</h1>
+                            <p class="lead mb-4">Merci pour votre demande de devis. Nous préparons une proposition personnalisée et vous contacterons sous 24h.</p>
+                        </div>
+                        
+                        <div id="testimonial-message" style="display: none;">
+                            <h1 class="mb-4">Témoignage envoyé !</h1>
+                            <p class="lead mb-4">Merci infiniment pour votre témoignage ! Votre avis nous aide à améliorer nos services et à gagner la confiance de nouveaux clients.</p>
+                        </div>
+                        
+                        <div id="appointment-message" style="display: none;">
+                            <h1 class="mb-4">Rendez-vous programmé !</h1>
+                            <p class="lead mb-4">Votre demande de rendez-vous a été enregistrée. Nous vous confirmerons la date et l'heure par email ou téléphone.</p>
+                        </div>
+                        
+                        <div class="next-steps mt-5">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="step-card">
+                                        <i class="fas fa-clock mb-3"></i>
+                                        <h6>Réponse rapide</h6>
+                                        <small>Sous 24h en général</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="step-card">
+                                        <i class="fas fa-phone mb-3"></i>
+                                        <h6>Contact direct</h6>
+                                        <small>Par email ou téléphone</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="step-card">
+                                        <i class="fas fa-handshake mb-3"></i>
+                                        <h6>Accompagnement</h6>
+                                        <small>Suivi personnalisé</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="actions mt-5">
+                            <a href="index.html" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-home me-2"></i>Accueil
+                            </a>
+                            <a href="services.html" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-cogs me-2"></i>Nos Services
+                            </a>
+                        </div>
+                        
+                        <!-- Contact d'urgence -->
+                        <div class="emergency-contact mt-5 p-4">
+                            <h6><i class="fas fa-exclamation-triangle text-warning me-2"></i>Besoin urgent ?</h6>
+                            <p class="mb-3">Pour toute urgence technique, contactez-nous directement :</p>
+                            <div class="contact-methods">
+                                <a href="tel:+221772404848" class="btn btn-outline-success me-2">
+                                    <i class="fas fa-phone me-1"></i>+221 77 240 48 48
+                                </a>
+                                <a href="https://wa.me/221772404848?text=Urgence%20technique" class="btn btn-success" target="_blank">
+                                    <i class="fab fa-whatsapp me-1"></i>WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Détection du type de message basé sur l'URL ou le localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const messageType = urlParams.get('type') || localStorage.getItem('lastSubmissionType') || 'default';
+            
+            // Masquer tous les messages
+            document.querySelectorAll('[id$="-message"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Afficher le bon message
+            const targetMessage = document.getElementById(messageType + '-message');
+            if (targetMessage) {
+                targetMessage.style.display = 'block';
+            } else {
+                document.getElementById('default-message').style.display = 'block';
+            }
+            
+            // Nettoyer le localStorage
+            localStorage.removeItem('lastSubmissionType');
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="whatsapp-service.js"></script>
 </body>
 </html>

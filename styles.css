@@ -50,6 +50,449 @@ body {
     background-color: var(--primary-blue) !important;
 }
 
+/* ===== Système de témoignages ===== */
+.testimonial-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 0;
+}
+
+.testimonial-form-container {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 2.5rem;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Système d'évaluation par étoiles */
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 1rem 0;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 2rem;
+    color: #e9ecef;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.rating-input input:checked ~ label {
+    color: #ffc107;
+}
+
+.rating-input label:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: rgba(255, 193, 7, 0.1);
+    transform: scale(0);
+    transition: var(--transition);
+}
+
+.rating-input label:hover:before {
+    transform: scale(1);
+}
+
+/* Compteur de caractères */
+.char-counter {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    text-align: right;
+}
+
+/* Cartes de témoignages récents */
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.testimonial-content {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.stars {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.stars i {
+    margin-right: 0.25rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.author-info h6 {
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.author-info small {
+    color: #6c757d;
+    display: block;
+}
+
+.service-badge {
+    display: inline-block;
+    background: rgba(0, 191, 255, 0.1);
+    color: var(--secondary-blue);
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+/* Messages d'alerte personnalisés */
+.alert-message {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d1f2eb, #a7f3d0);
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #fef2f2, #fecaca);
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+/* Formulaire de témoignage */
+.testimonial-form .form-control {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.testimonial-form .form-control:focus {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.testimonial-form .form-select {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.testimonial-form .form-select:focus {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+}
+
+.testimonial-form .form-check-input {
+    margin-right: 0.5rem;
+}
+
+.testimonial-form .form-check-input:checked {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+}
+
+.testimonial-form .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+}
+
+/* Call-to-action témoignages */
+.testimonial-cta-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px rgba(0,31,63,0.1);
+    border: 1px solid rgba(0,191,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.testimonial-cta-card h4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.testimonial-cta-card p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.testimonial-cta-card .btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.testimonial-cta-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,31,63,0.3);
+}
+
+/* Styles responsives pour les témoignages */
+@media (max-width: 768px) {
+    .testimonial-form-container {
+        padding: 1.5rem;
+        margin-top: -1rem;
+    }
+    
+    .rating-input label {
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .testimonial-cta-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ===== Page de remerciement ===== */
+.thank-you-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 60px rgba(0,31,63,0.1);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.thank-you-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.thank-you-icon {
+    font-size: 4rem;
+    color: var(--success-green);
+    animation: checkBounce 0.6s ease-in-out;
+}
+
+@keyframes checkBounce {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.thank-you-card h1 {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.thank-you-card .lead {
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+.step-card {
+    background: rgba(0,191,255,0.05);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    height: 100%;
+    transition: var(--transition);
+    border: 1px solid rgba(0,191,255,0.1);
+}
+
+.step-card:hover {
+    background: rgba(0,191,255,0.1);
+    transform: translateY(-5px);
+}
+
+.step-card i {
+    font-size: 2rem;
+    color: var(--secondary-blue);
+}
+
+.step-card h6 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.step-card small {
+    color: #6c757d;
+}
+
+.emergency-contact {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-radius: var(--border-radius);
+    border: 1px solid #ffc107;
+}
+
+.emergency-contact h6 {
+    color: #856404;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.emergency-contact p {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+.contact-methods .btn {
+    margin-bottom: 0.5rem;
+}
+
+/* Actions buttons */
+.actions .btn-lg {
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.actions .btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+}
+
+.actions .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,31,63,0.3);
+}
+
+.actions .btn-outline-primary {
+    border: 2px solid var(--secondary-blue);
+    color: var(--secondary-blue);
+}
+
+.actions .btn-outline-primary:hover {
+    background: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+/* Responsive pour page de remerciement */
+@media (max-width: 768px) {
+    .thank-you-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .thank-you-card h1 {
+        font-size: 2rem;
+    }
+    
+    .actions .btn-lg {
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    
+    .contact-methods .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
 .text-primary-blue {
     color: var(--primary-blue) !important;
 }
