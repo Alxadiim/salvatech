@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>Salva Tech - Solutions Informatiques au Sénégal | Matériel & Logiciels de Gestion</title>
     
     <!-- SEO Meta Tags -->
@@ -67,21 +67,23 @@
     <nav class="navbar navbar-expand-lg bg-primary-blue">
         <div class="container">
             <a class="navbar-brand text-white fw-bold fst-italic" href="#">
-                <img src="images/logo.png" alt="Logo Salva Tech" height="50" class="me-2" />
-                Salva Tech
+                <img src="images/logo.png" alt="Logo Salva Tech" height="45" class="me-2 d-none d-sm-inline" />
+                <img src="images/logo.png" alt="Logo Salva Tech" height="35" class="me-2 d-sm-none" />
+                <span class="d-none d-sm-inline">Salva Tech</span>
+                <span class="d-sm-none">Salva</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Basculer la navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menu">
+                <i class="fas fa-bars text-white"></i>
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="devis.html">Demander un devis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="devis.html"><span class="d-lg-none">Devis</span><span class="d-none d-lg-inline">Demander un devis</span></a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="FAQ.html">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#about">À propos</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
                     <li class="nav-item">
-                        <button class="btn btn-link text-white p-2" id="darkModeToggle" title="Basculer le mode sombre">
+                        <button class="btn btn-link text-white p-2" id="darkModeToggle" title="Mode sombre">
                             <i class="fas fa-moon"></i>
                         </button>
                     </li>
@@ -334,7 +336,7 @@
             
             <div class="text-center mt-5">
                 <a href="services.html" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-list me-2"></i>Voir tous nos services
+                    <i class="fas fa-list me-2"></i><span class="d-none d-sm-inline">Voir tous nos </span>Services
                 </a>
             </div>
         </div>
