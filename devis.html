@@ -7,6 +7,8 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <!-- Style personnalisé -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -38,6 +40,132 @@
       <p class="lead">Décrivez vos besoins et recevez une estimation personnalisée</p>
     </div>
   </header>
+
+  <!-- Calculateur de devis -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="calculator-card">
+            <h3 class="text-center mb-4 text-primary-blue">
+              <i class="fas fa-calculator me-2"></i>Calculateur de Devis Rapide
+            </h3>
+            <div id="quote-calculator">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="services-grid">
+                    
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="ordinateur">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Ordinateur de bureau/portable</h6>
+                          <small>À partir de 350 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-ordinateur" class="quantity-container">
+                        <input type="number" id="quantity-ordinateur" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="imprimante">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Imprimante multifonction</h6>
+                          <small>À partir de 85 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-imprimante" class="quantity-container">
+                        <input type="number" id="quantity-imprimante" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="onduleur">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Onduleur</h6>
+                          <small>À partir de 45 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-onduleur" class="quantity-container">
+                        <input type="number" id="quantity-onduleur" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="installation">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Installation réseau</h6>
+                          <small>À partir de 25 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-installation" class="quantity-container">
+                        <input type="number" id="quantity-installation" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="systeme-gestion">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Système de gestion</h6>
+                          <small>À partir de 150 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-systeme-gestion" class="quantity-container">
+                        <input type="number" id="quantity-systeme-gestion" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                    <div class="service-item">
+                      <label class="service-checkbox">
+                        <input type="checkbox" name="services" value="formation">
+                        <span class="checkmark"></span>
+                        <div class="service-info">
+                          <h6>Formation personnalisée</h6>
+                          <small>À partir de 35 000 FCFA</small>
+                        </div>
+                      </label>
+                      <div id="quantity-container-formation" class="quantity-container">
+                        <input type="number" id="quantity-formation" class="quantity-input" min="1" value="1">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="estimate-summary">
+                    <h5 class="text-primary-blue mb-3">Estimation</h5>
+                    <div class="total-section">
+                      <div class="total-label">Total estimé :</div>
+                      <div class="total-amount">
+                        <span id="estimated-total">0</span> FCFA
+                      </div>
+                    </div>
+                    <div class="estimate-note">
+                      <small>
+                        <i class="fas fa-info-circle me-1"></i>
+                        Prix indicatifs. Un devis précis sera établi après évaluation de vos besoins spécifiques.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Formulaire de devis -->
   <section class="py-5">
@@ -83,6 +211,7 @@
     <button type="submit" class="btn btn-primary">Envoyer la demande</button>
   </div>
 </form>
+
         </div>
       </div>
     </div>
@@ -95,6 +224,8 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts personnalisés -->
+  <script src="script.js"></script>
 
   <!-- Script d'envoi -->
   <script>
