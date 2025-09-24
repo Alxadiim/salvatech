@@ -1,0 +1,16 @@
+# Redirections Netlify - Salva Tech
+# Rediriger www vers non-www pour éviter erreurs SSL
+
+# Redirection principale : www vers non-www
+https://www.salvatech.netlify.app/* https://salvatech.netlify.app/:splat 301!
+
+# Redirection HTTP vers HTTPS (sécurité)
+http://salvatech.netlify.app/* https://salvatech.netlify.app/:splat 301!
+http://www.salvatech.netlify.app/* https://salvatech.netlify.app/:splat 301!
+
+# Redirections pour pages spécifiques (SEO friendly)
+/home /index.html 301
+/accueil /index.html 301
+
+# Gestion des erreurs 404
+/* /index.html 200
