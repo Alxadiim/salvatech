@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil - Priorité maximale -->
+  <url>
+    <loc>https://salvatech.netlify.app/</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Pages principales -->
+  <url>
+    <loc>https://salvatech.netlify.app/services.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/devis.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/rendez-vous.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/temoignages.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/FAQ.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Pages services spécialisées -->
+  <url>
+    <loc>https://salvatech.netlify.app/vente-materiel.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/installation-support.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/systemes-gestion.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/conseil-audit.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://salvatech.netlify.app/formations.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Page de remerciement -->
+  <url>
+    <loc>https://salvatech.netlify.app/merci.html</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

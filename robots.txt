@@ -1,0 +1,15 @@
+# Robots.txt pour Salva Tech
+# Instructions pour les moteurs de recherche
+
+# Autoriser tous les robots à indexer le site
+User-agent: *
+Allow: /
+
+# Bloquer l'indexation des pages internes
+Disallow: /merci.html
+
+# Sitemap XML pour faciliter l'indexation
+Sitemap: https://salvatech.netlify.app/sitemap.xml
+
+# Informations de contact (optionnel)
+# Contact: contact@salvatech.sn

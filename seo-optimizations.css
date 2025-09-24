@@ -1,0 +1,34 @@
+/* SEO et Performance Optimizations - Salva Tech */
+
+/* Préchargement des ressources critiques */
+@media (min-width: 768px) {
+  .hero-section {
+    background-attachment: fixed;
+  }
+}
+
+/* Optimisation des Core Web Vitals */
+.service-card, 
+.testimonial-card {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Lazy loading pour images */
+img {
+  loading: lazy;
+}
+
+img[src*="logo"] {
+  loading: eager; /* Logo chargé immédiatement */
+}
+
+/* Preconnect pour CDN externes */
+/* À ajouter dans le <head> :
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+*/
+
+/* Schema.org JSON-LD pour Rich Snippets */
+/* Déjà ajouté dans index.html */
