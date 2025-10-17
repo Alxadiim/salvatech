@@ -1668,24 +1668,21 @@ html {
 
 .feature-list {
     list-style: none;
-    padding: 0;
-    margin-bottom: 1rem;
+    padding-left: 0;
+    margin-top: 1rem;
 }
 
 .feature-list li {
-    padding: 0.25rem 0;
-    font-size: 0.9rem;
-    color: #666;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
     position: relative;
-    padding-left: 1rem;
 }
 
-.feature-list li::before {
-    content: '•';
-    color: var(--secondary-blue);
-    font-weight: bold;
+.feature-list li:before {
+    content: "→";
     position: absolute;
     left: 0;
+    color: var(--primary-blue);
 }
 
 .solution-price {
@@ -3188,6 +3185,7 @@ html {
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+    display: inline-block;
 }
 
 /* ===== Section Technologies & Stack Technique ===== */
@@ -3271,7 +3269,7 @@ html {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-opacity='0.1'%3E%3Cpath fill='%23ffffff' d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-opacity='0.1'%3E%3Cpath fill='%23ffffff' d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat;
     animation: float 20s ease-in-out infinite;
     z-index: 1;
 }
@@ -3581,9 +3579,6 @@ html {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .qty-btn:hover {
@@ -3722,69 +3717,4 @@ html {
 
 [data-theme="dark"] .selected-item:hover {
     background: rgba(0,121,191,0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-    }
-    
-    .service-card {
-        padding: 1rem;
-    }
-    
-    .service-icon {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .service-name {
-        font-size: 0.9rem;
-    }
-    
-    .service-price {
-        font-size: 0.8rem;
-    }
-    
-    .total-price {
-        font-size: 2rem;
-    }
-    
-    .quantity-controls {
-        gap: 0.5rem;
-    }
-    
-    .qty-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 1rem;
-    }
-    
-    .selection-summary {
-        padding: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .selected-item {
-        padding: 0.5rem;
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-    
-    .item-info {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .selected-item {
-        padding: 0.75rem 0.5rem;
-    }
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Collaboration - Salva Tech</title>
+  <meta name="description" content="Proposez un partenariat ou collaborez avec Salva Tech pour des solutions IA, IoT et projets IT au Sénégal." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-primary-blue">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold fst-italic" href="index.html">
+        <img src="images/logo.png" alt="Salva Tech" height="40" class="me-2" />Salva Tech
+      </a>
+      <div>
+        <a href="index.html" class="btn btn-outline-light btn-sm me-2">Accueil</a>
+        <a href="services.html" class="btn btn-outline-light btn-sm">Services</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-section text-white text-center d-flex align-items-center" style="min-height:220px;">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Collaborez avec Salva Tech</h1>
+      <p class="lead">Partenariats, projets IA & IoT industriels, intégration et R&D — discutons de vos besoins.</p>
+    </div>
+  </header>
+
+  <!-- Formulaire de collaboration -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title mb-3">Proposer une collaboration</h3>
+              <p class="text-muted mb-4">Remplissez le formulaire ci-dessous. Nous répondons sous 48h ouvrés.</p>
+
+              <form id="collab-form" method="POST" action="#" novalidate>
+                <!-- redirection après envoi (adapter si you have a thank-you page) -->
+                <input type="hidden" name="_next" value="merci.html">
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="fullname" class="form-label">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" required />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="company" class="form-label">Société / Organisation</label>
+                    <input type="text" id="company" name="company" class="form-control" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" />
+                  </div>
+
+                  <div class="col-12">
+                    <label for="subject" class="form-label">Objet</label>
+                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Ex: Partenariat IA/IoT, intégration, R&D..." />
+                  </div>
+
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" rows="6" class="form-control" placeholder="Décrivez votre proposition ou besoin" required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="1" id="newsletter" name="newsletter" />
+                      <label class="form-check-label" for="newsletter">J'accepte d'être contacté pour des offres et partenariats</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-paper-plane me-2"></i>Envoyer la proposition
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- petit script client pour feedback minimal -->
+              <script>
+                (function(){
+                  const form = document.getElementById('collab-form');
+                  form.addEventListener('submit', function(e){
+                    if(!form.checkValidity()){
+                      e.preventDefault();
+                      form.classList.add('was-validated');
+                      return;
+                    }
+                    // afficher feedback utilisateur simple puis laisser soumission normale
+                    const btn = form.querySelector('button[type="submit"]');
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Envoi...';
+                    // si action="#" on empêche l'envoi pour demo, sinon supprimer cette ligne
+                    // e.preventDefault();
+                  });
+                })();
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-3 text-white text-center bg-primary-blue">
+    <p class="mb-0">&copy; 2025 Salva Tech. Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@ class ServiceSelector {
             'ordinateur-portable': {
                 name: 'Ordinateur portable',
                 category: 'Matériel Informatique',
-                price: 400000,
+                price: 250000,
                 description: 'Laptop professionnel avec garantie',
                 icon: 'fas fa-laptop'
             },
