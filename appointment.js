@@ -23,6 +23,7 @@ class AppointmentSystem {
     init() {
         this.setupEventListeners();
         this.generateCalendar();
+        this.updateCalendarStatus();
     }
     
     setupEventListeners() {
@@ -77,6 +78,7 @@ class AppointmentSystem {
         
         // Régénérer le calendrier avec les disponibilités
         this.generateCalendar();
+        this.updateCalendarStatus();
         
         this.validateForm();
     }
@@ -282,6 +284,8 @@ class AppointmentSystem {
         const priceText = this.selectedService.price === 'gratuit' ? 
             'Gratuit' : `${parseInt(this.selectedService.price).toLocaleString()} FCFA`;
         
+        const urgencyText = document.getElementById('client-urgency')?.value || 'Normal';
+
         summaryContent.innerHTML = `
             <div class="summary-item">
                 <i class="fas fa-cog me-2"></i>
@@ -294,6 +298,10 @@ class AppointmentSystem {
             <div class="summary-item">
                 <i class="fas fa-clock me-2"></i>
                 ${this.selectedTime} (${this.selectedService.duration} min)
+            </div>
+            <div class="summary-item">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Urgence: ${urgencyText}
             </div>
             <div class="summary-item">
                 <i class="fas fa-money-bill me-2"></i>
@@ -316,8 +324,34 @@ class AppointmentSystem {
                        name && phone && country && city && address && terms;
         
         document.getElementById('confirm-appointment').disabled = !isValid;
+        this.updateCalendarStatus();
     }
-    
+
+    updateCalendarStatus() {
+        const status = document.getElementById('calendar-status-message');
+        if (!status) return;
+
+        if (!this.selectedService) {
+            status.textContent = 'Sélectionnez d\'abord un type d\'intervention pour activer le calendrier.';
+            status.classList.remove('d-none');
+            return;
+        }
+
+        if (!this.selectedDate) {
+            status.textContent = 'Service sélectionné. Choisissez une date disponible dans le calendrier.';
+            status.classList.remove('d-none');
+            return;
+        }
+
+        if (!this.selectedTime) {
+            status.textContent = 'Date sélectionnée. Choisissez un créneau horaire disponible.';
+            status.classList.remove('d-none');
+            return;
+        }
+
+        status.classList.add('d-none');
+    }
+
     confirmAppointment() {
         if (!this.selectedService || !this.selectedDate || !this.selectedTime) return;
         
@@ -325,6 +359,7 @@ class AppointmentSystem {
             service: this.selectedService,
             date: this.selectedDate,
             time: this.selectedTime,
+            urgency: document.getElementById('client-urgency')?.value || 'normal',
             name: document.getElementById('client-name').value,
             phone: document.getElementById('client-phone').value,
             country: document.getElementById('client-country').value,
@@ -366,7 +401,7 @@ class AppointmentSystem {
     
     async sendEmailNotification(formData) {
         const emailData = {
-            subject: `🗓️ Nouvelle demande de rendez-vous - ${formData.service}`,
+            subject: `🗓️ Nouvelle demande de rendez-vous - ${formData.service.title}`,
             message: `
 📅 NOUVELLE DEMANDE DE RENDEZ-VOUS
 
@@ -376,8 +411,9 @@ class AppointmentSystem {
 🌍 Pays: ${formData.country}
 🏙️ Ville: ${formData.city}
 📍 Adresse: ${formData.address}
+⏳ Urgence: ${formData.urgency || 'normal'}
 
-🔧 Service: ${formData.service}
+🔧 Service: ${formData.service.title}
 📅 Date souhaitée: ${new Date(formData.date).toLocaleDateString('fr-FR')}
 ⏰ Heure souhaitée: ${formData.time}
 
@@ -404,7 +440,7 @@ class AppointmentSystem {
     }
     
     sendWhatsAppNotification(formData) {
-        const message = `🗓️ *NOUVELLE DEMANDE RENDEZ-VOUS*%0A%0A👤 *Client:* ${formData.name}%0A📞 *Tél:* ${formData.phone}%0A🏙️ *Ville:* ${formData.city}%0A🔧 *Service:* ${formData.service}%0A📅 *Date:* ${new Date(formData.date).toLocaleDateString('fr-FR')}%0A⏰ *Heure:* ${formData.time}`;
+        const message = `🗓️ *NOUVELLE DEMANDE RENDEZ-VOUS*%0A%0A👤 *Client:* ${formData.name}%0A📞 *Tél:* ${formData.phone}%0A🏙️ *Ville:* ${formData.city}%0A🔧 *Service:* ${formData.service.title}%0A⏳ *Urgence:* ${formData.urgency || 'Normal'}%0A📅 *Date:* ${new Date(formData.date).toLocaleDateString('fr-FR')}%0A⏰ *Heure:* ${formData.time}`;
         
         const whatsappUrl = `https://wa.me/221772404848?text=${message}`;
         
@@ -425,7 +461,8 @@ class AppointmentSystem {
                     { name: "👤 Client", value: formData.name, inline: true },
                     { name: "📞 Téléphone", value: formData.phone, inline: true },
                     { name: "🌍 Localisation", value: `${formData.city}, ${formData.country}`, inline: true },
-                    { name: "🔧 Service", value: formData.service, inline: false },
+                    { name: "🔧 Service", value: formData.service.title, inline: false },
+                    { name: "⏳ Urgence", value: formData.urgency || 'Normal', inline: true },
                     { name: "📅 Date souhaitée", value: new Date(formData.date).toLocaleDateString('fr-FR'), inline: true },
                     { name: "⏰ Heure souhaitée", value: formData.time, inline: true },
                     { name: "📍 Adresse", value: formData.address, inline: false }
@@ -478,6 +515,9 @@ class AppointmentSystem {
                 <strong>Heure:</strong> ${formData.time}
             </div>
             <div class="confirmation-item">
+                <strong>Urgence:</strong> ${formData.urgency || 'Normal'}
+            </div>
+            <div class="confirmation-item">
                 <strong>Client:</strong> ${formData.name}
             </div>
             <div class="confirmation-item">
@@ -511,6 +551,7 @@ class AppointmentSystem {
         document.getElementById('time-slots-container').style.display = 'none';
         
         this.generateCalendar();
+        this.updateCalendarStatus();
     }
 }
 

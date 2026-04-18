@@ -49,14 +49,14 @@
                 <div class="col-lg-8 mx-auto">
                     <i class="fas fa-calendar-check service-icon mb-3"></i>
                     <h1 class="display-5 fw-bold">Prendre Rendez-vous</h1>
-                    <p class="lead">Demandez un rendez-vous pour votre intervention informatique. Nous vous contacterons pour confirmer la disponibilité.</p>
+                    <p class="lead">Demandez un rendez-vous pour votre intervention informatique. Nous vous contacterons pour confirmer le créneau et le mode d'intervention.</p>
                     <div class="alert alert-info mt-3 d-inline-block">
                         <i class="fas fa-globe-africa me-2"></i>
-                        <strong>Zone d'intervention :</strong> Sénégal (couverture complète) + Afrique de l'Ouest (Gambie, Mali, Guinée-Bissau, Mauritanie)
+                        <strong>Zone d'intervention :</strong> Sénégal (couverture complète) et Afrique
                     </div>
                     <div class="alert alert-warning mt-2 d-inline-block">
                         <i class="fas fa-info-circle me-2"></i>
-                        <strong>Note :</strong> Ce formulaire envoie une demande de rendez-vous. Notre équipe vous contactera sous 24h pour confirmer.
+                        <strong>Note :</strong> Votre demande est reçue immédiatement. Confirmation sous 24h ouvrées via WhatsApp ou email.
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                             <i class="fas fa-search"></i>
                         </div>
                         <h5>Diagnostic Gratuit</h5>
-                        <p>Évaluation de vos besoins informatiques et conseil personnalisé.</p>
+                        <p>Évaluation technique complète, rapport d’écart et plan d’action priorisé.</p>
                         <div class="appointment-details">
                             <span class="duration"><i class="fas fa-clock me-1"></i>60 min</span>
                             <span class="price">Gratuit</span>
@@ -89,7 +89,7 @@
                             <i class="fas fa-tools"></i>
                         </div>
                         <h5>Support Technique</h5>
-                        <p>Dépannage, réparation et maintenance de vos équipements informatiques.</p>
+                        <p>Dépannage, réparation, optimisation et sécurisation de votre parc informatique.</p>
                         <div class="appointment-details">
                             <span class="duration"><i class="fas fa-clock me-1"></i>2h</span>
                             <span class="price">25 000 FCFA</span>
@@ -103,7 +103,7 @@
                             <i class="fas fa-cogs"></i>
                         </div>
                         <h5>Installation & Configuration</h5>
-                        <p>Installation de logiciels, configuration réseau et mise en service.</p>
+                        <p>Installation réseau, configuration serveur et mise en service de votre infrastructure.</p>
                         <div class="appointment-details">
                             <span class="duration"><i class="fas fa-clock me-1"></i>3h</span>
                             <span class="price">35 000 FCFA</span>
@@ -117,7 +117,7 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <h5>Formation Personnalisée</h5>
-                        <p>Session de formation sur l'utilisation de vos outils informatiques.</p>
+                        <p>Session pratique pour utiliser et maîtriser vos applications et solutions IT.</p>
                         <div class="appointment-details">
                             <span class="duration"><i class="fas fa-clock me-1"></i>4h</span>
                             <span class="price">50 000 FCFA</span>
@@ -131,7 +131,7 @@
                             <i class="fas fa-lightbulb"></i>
                         </div>
                         <h5>Conseil & Audit</h5>
-                        <p>Analyse de votre système informatique et recommandations d'amélioration.</p>
+                        <p>Audit IT, optimisation des processus et recommandations pour votre sécurité et performance.</p>
                         <div class="appointment-details">
                             <span class="duration"><i class="fas fa-clock me-1"></i>1h30</span>
                             <span class="price">30 000 FCFA</span>
@@ -139,6 +139,14 @@
                     </div>
                 </div>
 
+            </div>
+            
+            <!-- Note pour la prise de rendez-vous -->
+            <div class="text-center mt-4">
+                <div class="alert alert-info d-inline-block">
+                    <i class="fas fa-arrow-down me-2"></i>
+                    <strong>Prise de rendez-vous :</strong> Sélectionnez un service ci-dessus, puis remplissez le formulaire en bas de la page.
+                </div>
             </div>
         </div>
     </section>
@@ -157,6 +165,9 @@
                                     <h4 class="mb-4 text-primary-blue">
                                         <i class="fas fa-calendar-alt me-2"></i>Choisissez une date
                                     </h4>
+                                    <div id="calendar-status-message" class="alert alert-secondary mb-3">
+                                        Sélectionnez d'abord un type d'intervention pour activer le calendrier.
+                                    </div>
                                     <div id="appointment-calendar"></div>
                                 </div>
 
@@ -235,6 +246,21 @@
                                             <textarea class="form-control" id="client-message" rows="3" placeholder="Décrivez brièvement votre problème ou vos besoins..."></textarea>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="client-urgency" class="form-label">Urgence</label>
+                                                <select class="form-select" id="client-urgency">
+                                                    <option value="normal">Normal</option>
+                                                    <option value="important">Important</option>
+                                                    <option value="urgent">Urgent</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="client-email" class="form-label">Email <small class="text-muted">(optionnel mais recommandé)</small></label>
+                                                <input type="email" class="form-control" id="client-email" placeholder="adresse@exemple.com">
+                                            </div>
+                                        </div>
+
                                         <div class="mb-4">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="terms-accept" required>
@@ -268,7 +294,7 @@
                     <div class="info-card text-center">
                         <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
                         <h6>Zone d'intervention</h6>
-                        <p>Dakar, Guédiawaye, Pikine, Rufisque et environs</p>
+                        <p>Sénégal et Afrique. Support local et accompagnement à distance.</p>
                     </div>
                 </div>
 
@@ -284,7 +310,7 @@
                     <div class="info-card text-center">
                         <i class="fas fa-credit-card fa-2x text-primary mb-3"></i>
                         <h6>Paiement</h6>
-                        <p>Espèces, Mobile Money (Orange Money, Wave)</p>
+                        <p>Espèces, Mobile Money (Orange Money, Wave), virement ou carte selon le cas.</p>
                     </div>
                 </div>
 
@@ -292,7 +318,7 @@
                     <div class="info-card text-center">
                         <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
                         <h6>Garantie</h6>
-                        <p>Intervention garantie 7 jours. Satisfaction assurée.</p>
+                        <p>Intervention garantie 7 jours. Assistance à distance incluse.</p>
                     </div>
                 </div>
 

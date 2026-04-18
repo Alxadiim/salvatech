@@ -499,7 +499,7 @@ body {
 
 /* Hero section améliorée */
 .hero-section {
-    height: 100vh;
+    min-height: 100vh;
     background: var(--gradient-primary);
     background-attachment: fixed;
     padding: 60px 20px;
@@ -518,20 +518,38 @@ body {
     animation: float 20s ease-in-out infinite;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-}
+    .hero-section::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at 15% 20%, rgba(255,255,255,0.18), transparent 18%),
+            radial-gradient(circle at 80% 25%, rgba(255,255,255,0.12), transparent 16%),
+            radial-gradient(circle at 50% 80%, rgba(255,255,255,0.1), transparent 22%),
+            linear-gradient(115deg, rgba(255,255,255,0.08), transparent 40%, rgba(255,255,255,0.05));
+        mix-blend-mode: screen;
+        opacity: 0.75;
+        animation: drift 24s ease-in-out infinite;
+    }
 
-/* Titres et typographie */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+    }
 
-h1 { font-size: 3.5rem; }
+    @keyframes drift {
+        0% {
+            background-position: 0% 0%, 100% 10%, 0% 100%, 0% 0%;
+        }
+        50% {
+            background-position: 10% 10%, 90% 15%, 5% 90%, 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%, 100% 10%, 0% 100%, 0% 0%;
+        }
+    }
+
 h2 { font-size: 2.5rem; }
 h3 { font-size: 2rem; }
 h4 { font-size: 1.5rem; }
