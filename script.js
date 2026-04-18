@@ -278,10 +278,9 @@ function initQuoteCalculator() {
     const totalElement = document.getElementById('estimated-total');
     
     const prices = {
-        'ordinateur': 350000,
-        'imprimante': 85000,
-        'onduleur': 45000,
-        'installation': 25000,
+        'ordinateur': 320000,
+        'imprimante': 90000,
+        'onduleur': 50000,
         'support': 15000,
         'formation': 35000,
         'systeme-gestion': 150000

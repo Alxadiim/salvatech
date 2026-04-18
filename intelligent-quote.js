@@ -7,13 +7,13 @@ const QuoteConfig = {
         'ordinateur-bureau': {
             name: 'Ordinateur de bureau',
             category: 'materiel',
-            basePrice: 350000,
-            priceRange: { min: 250000, max: 800000 },
+            basePrice: 320000,
+            priceRange: { min: 240000, max: 780000 },
             options: {
-                'basique': { price: 250000, description: 'Usage bureautique - Celeron, 4GB RAM, 500GB HDD' },
-                'standard': { price: 350000, description: 'Usage professionnel - Core i3, 8GB RAM, 256GB SSD' },
-                'performance': { price: 500000, description: 'Usage avancé - Core i5, 16GB RAM, 512GB SSD' },
-                'premium': { price: 750000, description: 'Usage intensif - Core i7, 32GB RAM, 1TB SSD' }
+                'basique': { price: 240000, description: 'Usage bureautique - Celeron, 4GB RAM, 500GB HDD' },
+                'standard': { price: 320000, description: 'Usage professionnel - Core i3, 8GB RAM, 256GB SSD' },
+                'performance': { price: 520000, description: 'Usage avancé - Core i5, 16GB RAM, 512GB SSD' },
+                'premium': { price: 780000, description: 'Usage intensif - Core i7, 32GB RAM, 1TB SSD' }
             },
             accessories: ['clavier', 'souris', 'ecran', 'onduleur'],
             estimatedDelivery: '3-5 jours',
@@ -23,12 +23,12 @@ const QuoteConfig = {
         'ordinateur-portable': {
             name: 'Ordinateur portable',
             category: 'materiel',
-            basePrice: 400000,
-            priceRange: { min: 300000, max: 1200000 },
+            basePrice: 320000,
+            priceRange: { min: 280000, max: 1200000 },
             options: {
-                'basique': { price: 300000, description: '14" - Celeron, 4GB RAM, 500GB HDD' },
-                'standard': { price: 450000, description: '15" - Core i3, 8GB RAM, 256GB SSD' },
-                'performance': { price: 650000, description: '15" - Core i5, 16GB RAM, 512GB SSD' },
+                'basique': { price: 280000, description: '14" - Celeron, 4GB RAM, 500GB HDD' },
+                'standard': { price: 360000, description: '15" - Core i3, 8GB RAM, 256GB SSD' },
+                'performance': { price: 600000, description: '15" - Core i5, 16GB RAM, 512GB SSD' },
                 'gaming': { price: 950000, description: '17" Gaming - Core i7, 16GB RAM, RTX Graphics' }
             },
             accessories: ['souris', 'sacoche', 'onduleur'],
@@ -39,10 +39,10 @@ const QuoteConfig = {
         'imprimante': {
             name: 'Imprimante multifonction',
             category: 'materiel',
-            basePrice: 85000,
-            priceRange: { min: 65000, max: 350000 },
+            basePrice: 90000,
+            priceRange: { min: 70000, max: 320000 },
             options: {
-                'jet-encre': { price: 65000, description: 'Jet d\'encre couleur - Usage domestique' },
+                'jet-encre': { price: 70000, description: 'Jet d\'encre couleur - Usage domestique' },
                 'laser': { price: 120000, description: 'Laser monochrome - Usage bureau' },
                 'laser-couleur': { price: 180000, description: 'Laser couleur - Usage professionnel' },
                 'grand-format': { price: 320000, description: 'A3+ - Usage design/impression' }
@@ -55,28 +55,69 @@ const QuoteConfig = {
         'onduleur': {
             name: 'Onduleur UPS',
             category: 'materiel',
-            basePrice: 45000,
-            priceRange: { min: 35000, max: 250000 },
+            basePrice: 50000,
+            priceRange: { min: 40000, max: 250000 },
             options: {
-                '650va': { price: 35000, description: '650VA - 1 PC + Écran' },
-                '1200va': { price: 55000, description: '1200VA - 2-3 équipements' },
-                '2000va': { price: 85000, description: '2000VA - Petit bureau' },
-                '3000va': { price: 150000, description: '3000VA - Bureau complet' }
+                '650va': { price: 40000, description: '650VA - 1 PC + Écran' },
+                '1200va': { price: 60000, description: '1200VA - 2-3 équipements' },
+                '2000va': { price: 95000, description: '2000VA - Petit bureau' },
+                '3000va': { price: 160000, description: '3000VA - Bureau complet' }
             },
             accessories: ['batteries'],
             estimatedDelivery: '1-2 jours',
+            warranty: '2 ans'
+        },
+        'switch-poe': {
+            name: 'Switch Gigabit PoE',
+            category: 'materiel',
+            basePrice: 85000,
+            priceRange: { min: 85000, max: 240000 },
+            options: {
+                '8-ports': { price: 110000, description: '8 ports PoE+ pour caméras IP et bornes Wi-Fi professionnelles' },
+                '16-ports': { price: 170000, description: '16 ports PoE+ pour bureaux et boutiques' }
+            },
+            accessories: ['câbles-rj45'],
+            estimatedDelivery: '2-4 jours',
+            warranty: '1 an'
+        },
+        'firewall-utm': {
+            name: 'Firewall UTM',
+            category: 'materiel',
+            basePrice: 140000,
+            priceRange: { min: 140000, max: 420000 },
+            options: {
+                'small': { price: 140000, description: 'Filtrage web et VPN pour PME' },
+                'medium': { price: 220000, description: 'Sécurité avancée et gestion multi-site' },
+                'enterprise': { price: 420000, description: 'UTM complet pour entreprise' }
+            },
+            accessories: ['contrat-support'],
+            estimatedDelivery: '3-7 jours',
+            warranty: '2 ans'
+        },
+        'nas': {
+            name: 'NAS / Stockage Réseau',
+            category: 'materiel',
+            basePrice: 190000,
+            priceRange: { min: 190000, max: 680000 },
+            options: {
+                '2-baies': { price: 190000, description: 'NAS 2 baies pour sauvegarde et partage' },
+                '4-baies': { price: 350000, description: 'NAS 4 baies pour PME et redondance RAID' },
+                '8-baies': { price: 680000, description: 'NAS 8 baies pour stockage d\'entreprise' }
+            },
+            accessories: ['disques-durs'],
+            estimatedDelivery: '3-7 jours',
             warranty: '2 ans'
         },
         
         'serveur': {
             name: 'Serveur d\'entreprise',
             category: 'materiel',
-            basePrice: 750000,
-            priceRange: { min: 450000, max: 2500000 },
+            basePrice: 520000,
+            priceRange: { min: 520000, max: 2600000 },
             options: {
-                'tour': { price: 450000, description: 'Serveur tour - PME' },
-                'rack-1u': { price: 750000, description: 'Serveur rack 1U - Entreprise' },
-                'rack-2u': { price: 1200000, description: 'Serveur rack 2U - Grande entreprise' }
+                'tour': { price: 520000, description: 'Serveur tour - PME' },
+                'rack-1u': { price: 850000, description: 'Serveur rack 1U - Entreprise' },
+                'rack-2u': { price: 1300000, description: 'Serveur rack 2U - Grande entreprise' }
             },
             accessories: ['disques-additionnels', 'ram-additionnelle'],
             estimatedDelivery: '5-10 jours',

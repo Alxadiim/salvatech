@@ -7,14 +7,14 @@ class ServiceSelector {
             'ordinateur-bureau': {
                 name: 'Ordinateur de bureau',
                 category: 'Matériel Informatique',
-                price: 350000,
+                price: 320000,
                 description: 'PC complet avec écran, clavier, souris',
                 icon: 'fas fa-desktop'
             },
             'ordinateur-portable': {
                 name: 'Ordinateur portable',
                 category: 'Matériel Informatique',
-                price: 250000,
+                price: 320000,
                 description: 'Laptop professionnel avec garantie',
                 icon: 'fas fa-laptop'
             },
@@ -45,6 +45,34 @@ class ServiceSelector {
                 price: 120000,
                 description: 'Onduleur haute capacité pour entreprise',
                 icon: 'fas fa-battery-full'
+            },
+            'switch-poe': {
+                name: 'Switch Gigabit PoE',
+                category: 'Matériel Informatique',
+                price: 85000,
+                description: 'Switch PoE pour caméras IP et bornes Wi-Fi professionnelles',
+                icon: 'fas fa-network-wired'
+            },
+            'firewall-utm': {
+                name: 'Firewall UTM',
+                category: 'Matériel Informatique',
+                price: 120000,
+                description: 'Sécurité réseau complète avec VPN et filtrage avancé',
+                icon: 'fas fa-shield-alt'
+            },
+            'nas': {
+                name: 'NAS / Stockage Réseau',
+                category: 'Matériel Informatique',
+                price: 175000,
+                description: 'Stockage centralisé sécurisé pour sauvegarde et partage de fichiers',
+                icon: 'fas fa-server'
+            },
+            'serveur-entreprise': {
+                name: 'Serveur d\'entreprise',
+                category: 'Matériel Informatique',
+                price: 450000,
+                description: 'Serveur tour ou rack 1U/2U pour PME et entreprises',
+                icon: 'fas fa-server'
             },
             
             // SERVICES TECHNIQUES

@@ -13,11 +13,12 @@
 2. **Créer un formulaire :**
    - Cliquer "New Form"
    - Nom : "Demandes Rendez-vous Salva Tech"
-   - Email de réception : `lo.salva.tech@gmail.com`
+   - Email de réception : `contact@salvatech.tech`
 
 3. **Copier l'ID du formulaire :**
    - Format : `xzbqwxyz` (exemple)
    - Dans `notification-config.js`, ligne 7 :
+
    ```javascript
    formspreeId: 'xzbqwxyz', // ⬅️ Remplacer ici
    ```
@@ -37,6 +38,7 @@
 **Recevoir les demandes directement sur WhatsApp :**
 
 1. **Dans `notification-config.js`, ligne 21 :**
+
    ```javascript
    autoOpen: true, // ⬅️ Changer false en true
    ```
@@ -70,12 +72,12 @@
 
 ## 📊 État Actuel des Notifications
 
-| Service | État | Configuration |
-|---------|------|---------------|
-| 📧 **Email** | ⚠️ À configurer | Remplacer `YOUR_FORMSPREE_FORM_ID` |
-| 📱 **WhatsApp** | ✅ Prêt | Numéro +221 77 240 48 48 |
-| 💬 **Discord** | ⚠️ Optionnel | Remplacer `YOUR_DISCORD_WEBHOOK_URL` |
-| 📊 **Backup Local** | ✅ Actif | localStorage du navigateur |
+| Service             | État            | Configuration                        |
+| ------------------- | --------------- | ------------------------------------ |
+| 📧 **Email**        | ⚠️ À configurer | Remplacer `YOUR_FORMSPREE_FORM_ID`   |
+| 📱 **WhatsApp**     | ✅ Prêt         | Numéro +221 77 240 48 48             |
+| 💬 **Discord**      | ⚠️ Optionnel    | Remplacer `YOUR_DISCORD_WEBHOOK_URL` |
+| 📊 **Backup Local** | ✅ Actif        | localStorage du navigateur           |
 
 ---
 
@@ -94,14 +96,17 @@
 ## 🚨 Dépannage
 
 **❌ Email ne fonctionne pas :**
+
 - Vérifier l'ID Formspree dans `notification-config.js`
 - Vérifier la console pour les erreurs (F12)
 
 **❌ WhatsApp ne s'ouvre pas :**
+
 - Vérifier que `autoOpen: true`
 - Vérifier le numéro de téléphone
 
 **❌ Discord ne reçoit rien :**
+
 - Vérifier l'URL du webhook
 - Vérifier que `enabled: true`
 
@@ -110,10 +115,12 @@
 ## 📈 Options Avancées (Payantes)
 
 ### SMS (Twilio)
+
 - Configuration dans `notification-config.js`
 - Coût : ~$0.05 par SMS
 
 ### Google Sheets
+
 - Sauvegarde automatique dans une feuille de calcul
 - Gratuit avec API Google
 
@@ -122,7 +129,7 @@
 ## 💡 Recommandations
 
 1. **Commencer par Formspree** (email) - Le plus fiable
-2. **Activer WhatsApp** - Très pratique au Sénégal  
+2. **Activer WhatsApp** - Très pratique au Sénégal
 3. **Discord optionnel** - Pour équipe technique
 4. **Tester régulièrement** les notifications
 

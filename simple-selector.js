@@ -3,10 +3,10 @@ class SimpleServiceSelector {
     constructor() {
         this.selected = new Map(); // Maintenant on stocke id -> quantité
         this.services = [
-            { id: 'pc-bureau', name: 'PC de Bureau', price: 350000, icon: '💻' },
-            { id: 'pc-portable', name: 'PC Portable', price: 400000, icon: '💻' },
-            { id: 'imprimante', name: 'Imprimante', price: 125000, icon: '🖨️' },
-            { id: 'onduleur', name: 'Onduleur', price: 65000, icon: '🔋' },
+            { id: 'pc-bureau', name: 'PC de Bureau', price: 320000, icon: '💻' },
+            { id: 'pc-portable', name: 'PC Portable', price: 320000, icon: '💻' },
+            { id: 'imprimante', name: 'Imprimante', price: 90000, icon: '🖨️' },
+            { id: 'onduleur', name: 'Onduleur', price: 50000, icon: '🔋' },
             { id: 'installation', name: 'Installation', price: 75000, icon: '🔧' },
             { id: 'support', name: 'Support Tech', price: 25000, icon: '🛠️' },
             { id: 'formation', name: 'Formation', price: 50000, icon: '📚' },

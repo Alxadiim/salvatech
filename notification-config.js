@@ -6,7 +6,7 @@ const NotificationConfig = {
         enabled: true,
         service: 'formspree', // ou 'emailjs'
         formspreeId: 'YOUR_FORMSPREE_FORM_ID', // À remplacer par votre ID Formspree
-        recipientEmail: 'lo.salva.tech@gmail.com',
+        recipientEmail: 'contact@salvatech.tech',
         
         // Configuration EmailJS (alternative)
         emailjs: {
