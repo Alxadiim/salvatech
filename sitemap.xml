@@ -46,35 +46,35 @@
   
   <!-- Pages services spécialisées -->
   <url>
-    <loc>https://salvatech.ssalvatech.tech/vente-materiel.html</loc>
+    <loc>https://salvatech.salvatech.tech/vente-materiel.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://salvatech.ssalvatech.tech/installation-support.html</loc>
+    <loc>https://salvatech.salvatech.tech/installation-support.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://salvatech.ssalvatech.tech/systemes-gestion.html</loc>
+    <loc>https://salvatech.salvatech.tech/systemes-gestion.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://salvatech.ssalvatech.tech/conseil-audit.html</loc>
+    <loc>https://salvatech.salvatech.tech/conseil-audit.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://salvatech.ssalvatech.tech/formations.html</loc>
+    <loc>https://salvatech.salvatech.tech/formations.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -82,7 +82,7 @@
   
   <!-- Page de remerciement -->
   <url>
-    <loc>https://salvatech.ssalvatech.tech/merci.html</loc>
+    <loc>https://salvatech.salvatech.tech/merci.html</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
