@@ -426,7 +426,7 @@ class AppointmentSystem {
             phone: formData.phone
         };
         
-        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        const response = await fetch('https://formspree.io/f/meokgwon', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
